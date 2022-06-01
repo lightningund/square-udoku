@@ -2,10 +2,19 @@ class Block {
   PVector[] pieces;
 
   public Block() {
+    // Set a random number of components for the piece
     int numPieces = ceil(random(0, 5));
+
+    // Create the array to hold the components
     pieces = new PVector[numPieces];
+
+    // Set the first one as (0,0)
     pieces[0] = new PVector(0, 0);
+
+    // Keep track of the last generated piece
     PVector lastPiece = pieces[0];
+
+
     for(int i = 1; i < numPieces; i ++) {
       boolean validPos = false;
       PVector newPos = lastPiece.copy();
